@@ -34,7 +34,7 @@
 
 # Deny direct access to PHP files in controllers/views
 <FilesMatch "\.php$">
-    <If "%{REQUEST_URI} =~ m#^/routing-system-php/(controllers|views)/#">
+    <If "%{REQUEST_URI} =~ m#^/Simple-Routing-System/(controllers|views)/#">
         Require all denied
     </If>
 </FilesMatch>
