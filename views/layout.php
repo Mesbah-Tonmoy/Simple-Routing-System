@@ -138,7 +138,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; <?= $current_year ?> <?= htmlspecialchars($site_name, ENT_QUOTES, 'UTF-8') ?>. All rights reserved.</p>
-        <p>Requires PHP 8.1+ | Running PHP <?= phpversion() ?> | <a href="https://github.com" target="_blank">GitHub</a></p>
+        <p>Requires PHP 8.1+ | Running PHP <?= phpversion() ?> | <a href="https://github.com/Mesbah-Tonmoy/Simple-Routing-System" target="_blank">GitHub</a></p>
     </footer>
 </body>
 </html>

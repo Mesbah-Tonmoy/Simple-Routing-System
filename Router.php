@@ -93,7 +93,6 @@ final class Router
         
         $this->routes[$method][$pattern] = [
             'handler' => $handler,
-            'path' => $path,
         ];
         
         return $this;

@@ -16,7 +16,7 @@ ini_set('display_errors', '1');
 // Set default timezone
 date_default_timezone_set('UTC');
 
-// Autoloader for classes (PSR-4 style)
+// Autoloader for classes
 spl_autoload_register(function (string $class): void {
     $file = __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
     
