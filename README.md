@@ -38,6 +38,13 @@ cd Simple-Routing-System
 
 Place the project in your `htdocs` folder. The system automatically detects the base path.
 
+Example: `C:\xampp\htdocs\Simple-Routing-System\`
+
+Update `.htaccess` line 9 to match your directory name:
+```apache
+RewriteBase /Simple-Routing-System/
+```
+
 **For Production (Root Installation):**
 
 Update `.htaccess` line 9:
@@ -45,7 +52,7 @@ Update `.htaccess` line 9:
 RewriteBase /
 ```
 
-### 3. Set Permissions
+### 3. Set Permissions (Linux/Mac)
 
 ```bash
 chmod -R 755 .
@@ -53,7 +60,7 @@ chmod -R 755 .
 
 ### 4. Access Your Application
 
-- **Local:** `http://localhost/routing-system-php/`
+- **Local:** `http://localhost/Simple-Routing-System/`
 - **Production:** `http://yourdomain.com/`
 
 ## 📖 Usage
@@ -134,7 +141,7 @@ Create a view file in the `views/` directory:
 ## 🏗️ Project Structure
 
 ```
-routing-system-php/
+Simple-Routing-System/
 ├── controllers/          # Application controllers
 │   ├── HomeController.php
 │   ├── AboutController.php

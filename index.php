@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Application Entry Point
  * 
  * This file handles all incoming HTTP requests and bootstraps the application.
- * All requests should be routed through this file using .htaccess (Apache) or nginx config.
+ * All requests should be routed through this file using .htaccess (Apache).
  */
 
 // Error reporting for development (disable in production)
@@ -42,14 +42,6 @@ session_start([
     'use_strict_mode' => true,
 ]);
 
-/*
-echo "<pre>";
-echo "REQUEST_URI: " . $_SERVER['REQUEST_URI'] . "\n";
-echo "SCRIPT_NAME: " . $_SERVER['SCRIPT_NAME'] . "\n";
-echo "Parsed BasePath: " . str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])) . "\n";
-echo "</pre>";
-*/
-
 try {
     // Initialize Router
     $router = new Router();
@@ -62,8 +54,7 @@ try {
     
     // Dynamic route example
     $router->get('/user/{id}', 'UserController@show');
-    $router->get('/product/{slug}', 'ProductController@show');
-    
+    $router->get('/product/{slug}', 'ProductController@show');    
     
     // Dispatch the request
     $router->dispatch();

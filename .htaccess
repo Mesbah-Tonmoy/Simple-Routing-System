@@ -5,7 +5,7 @@
 # Enable URL Rewriting
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /routing-system-php/
+    RewriteBase /Simple-Routing-System/
     
     # Remove trailing slashes
     RewriteCond %{REQUEST_FILENAME} !-d
