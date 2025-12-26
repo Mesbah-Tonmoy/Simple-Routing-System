@@ -225,7 +225,7 @@ The layout uses inline CSS for simplicity. You can:
 
 ### Development Mode
 
-Set in `index.php` line 85:
+Set in `index.php` line 76:
 ```php
 $isDevelopment = true; // Shows detailed errors
 ```
