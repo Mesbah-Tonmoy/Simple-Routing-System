@@ -1,0 +1,59 @@
+# ================================
+# Simple PHP Routing System
+# ================================
+
+# Enable URL Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /routing-system-php/
+    
+    # Remove trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+    
+    # Route all requests through index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# ================================
+# Security
+# ================================
+
+# Deny access to hidden files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Protect sensitive files
+<FilesMatch "^(composer\.(json|lock)|README\.md)$">
+    Require all denied
+</FilesMatch>
+
+# Deny direct access to PHP files in controllers/views
+<FilesMatch "\.php$">
+    <If "%{REQUEST_URI} =~ m#^/routing-system-php/(controllers|views)/#">
+        Require all denied
+    </If>
+</FilesMatch>
+
+# ================================
+# Performance
+# ================================
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# ================================
+# Basic Settings
+# ================================
+
+# UTF-8 encoding
+AddDefaultCharset UTF-8
+
+# Disable directory browsing
+Options -Indexes
